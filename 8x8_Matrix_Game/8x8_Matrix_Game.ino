@@ -1,4 +1,9 @@
 
+/**
+ * Useful for understanding pin mapping:
+ * https://www.arduino.cc/en/Tutorial/RowColumnScanning
+ */
+
 const int row[8] = {
   13, 18, 9, 16, 2, 8, 3, 6
 };
