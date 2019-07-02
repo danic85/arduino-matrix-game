@@ -4,17 +4,21 @@
  * https://www.arduino.cc/en/Tutorial/RowColumnScanning
  */
 
+
 const int row[8] = {
-  13, 18, 9, 16, 2, 8, 3, 6
+  //13, 18, 9, 16, 2, 8, 3, 6
+  2, 7, 13, 5, A0, 12, A1, A4
 };
 
 const int col[8] = {
-  17, 4, 5, 14, 7, 15, 19, 12
+  //17, 4, 5, 14, 7, 15, 19, 12
+  6, A2, A3, 3, A5, 4, 8, 9
 };
 
 const int motionPin = 10;
 const int buzzerPin = 11;
 const int tapPin = A6;
+const int seedPin = A7;
 const int tapThreshold = 100;
 
 int pixels[8][8];
@@ -43,7 +47,7 @@ void setup() {
     pinMode(row[thisPin], OUTPUT);
 
     digitalWrite(col[thisPin], HIGH);
-    randomSeed(analogRead(A7));
+    randomSeed(analogRead(seedPin));
   }
   timer = millis();
   new_cherry();
